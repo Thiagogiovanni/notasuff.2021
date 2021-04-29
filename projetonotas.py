@@ -11,18 +11,20 @@ def entrada():
     print("-="*56)
 def calculo1():
         formcalc1 = []
-        somcalc1 = []
-        for pos in range (1,7):
+        somcalc1 = [] 
+        for pos in range (1,9):
             notacalc1 = float(input("Qual sua nota na {}º formativa? ".format(pos)))
             formcalc1.append(notacalc1) #salvar notas formativa
+            
+
         print("Agora preciso saber sobre suas outras provas... ")
         sleep(2)
         for pos2 in range (1,3):   
             notacalc2 = float(input("Qual suas notas na {}º somativa? ".format(pos2)))
             somcalc1.append(notacalc2) #salvar notas somativas
-        soma1= sum(formcalc1)   
-        soma2 = sum(somcalc1)
-        k = ((soma1/4)*0.4 + (soma2/4)*0.6)
+        média1 = (sum(formcalc1)/len(formcalc1))
+        média2 = (sum(somcalc1)/len(somcalc1))
+        k = ((média1)*0.4 + (média2)*0.6)
         print("Sua nota final, em CÁLCULO 1 é: {:.2f}".format(k))
 def geometria_analitica():
     listasgma = int(input("Das 7 listas do semestre, quantas voce fez? "))
@@ -59,4 +61,4 @@ elif resp==2:
     geometria_analitica()
 elif resp==3:
     lnf()
-#sleep(5)  #ativar se for usar no cmd (esperar a mensagem sobre a nota final na materia e n fechar direto)
+sleep(5)  #ativar se for usar no cmd (esperar a mensagem sobre a nota final na materia e n fechar direto)
